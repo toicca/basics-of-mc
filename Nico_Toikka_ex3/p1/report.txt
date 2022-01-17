@@ -1,0 +1,14 @@
+Compilation:
+gfortran -c mt_mod.f95
+gfortran -c ex3p1.f95
+gfortran *.o
+
+Running:
+Data: a.exe
+Graph: python analysis.py
+
+Results:
+Solution for analytical approach is in inversion.pdf. 
+Distributions seem to match, but there are some minor problems at the middle and the extremes of the combined method.
+This might be due to a) parameters of the Gaussian or b) in implementation of the method (or these minor differences
+can't be avoided).

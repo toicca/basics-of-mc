@@ -1,0 +1,60 @@
+Compilation:
+gfortran -c mt_mod.f95
+gfortran -c ex3p3.f95
+gfortran *.o
+
+Running:
+Data: a.exe
+Graph (for problem 4): python analysis.py
+
+Results and comments:
+
+a) Partially stratified sampling seems to give the best accuracy with low N, so it seems to be the best option in general. 
+But in this case all calculations up to 10^4 are very fast, so out of these results importance sampling would be the best choice,
+because it is the most accurate before noticable differences in time.
+
+Partially stratified sampling might be implemented wrong though. The results are sketchy, but reasonable if you think that the values
+are evenly spread right at the beginning so adding more values doesn't add to the accuracy.
+
+b) At N=10^3 and 100 samples, direct sampling gives the lowest error and importance sampling has the highest one.
+
+Table(ish) with errors:
+DS:
+N = 10^2, deltaI = 0.128795510395005, time =  0.000
+N = 10^3, deltaI = 0.047629663353107, time =  0.000
+N = 10^4, deltaI = 0.001665533390843, time =  0.000
+N = 10^5, deltaI = 0.002623361875803, time =  0.031
+N = 10^6, deltaI = 0.000059734233596, time =  0.344
+Error: 0.022336
+
+SS:
+N = 10^2, deltaI = 0.078903623465738, time =  0.000
+N = 10^3, deltaI = 0.001410609068765, time =  0.000
+N = 10^4, deltaI = 0.005314467000238, time =  0.000
+N = 10^5, deltaI = 0.001047171148890, time =  0.031
+N = 10^6, deltaI = 0.000074126797220, time =  0.312
+Error: 0.091907
+
+HM:
+N = 10^2, deltaI = 0.266997095942497, time =  0.000
+N = 10^3, deltaI = 0.025002908408642, time =  0.000
+N = 10^4, deltaI = 0.014197092175484, time =  0.000
+N = 10^5, deltaI = 0.001677091988921, time =  0.031
+N = 10^6, deltaI = 0.002098908067346, time =  0.344
+Error: 0.132035
+
+PSS:
+N = 10^2, deltaI = 0.014311099662893, time =  0.000
+N = 10^3, deltaI = 0.014469526498233, time =  0.000
+N = 10^4, deltaI = 0.014145581206405, time =  0.000
+N = 10^5, deltaI = 0.014461578378365, time =  0.031
+N = 10^6, deltaI = 0.014367680502161, time =  0.344
+Error: 0.162099
+
+IS:
+N = 10^2, deltaI = 0.016669419394053, time =  0.000
+N = 10^3, deltaI = 0.002124562167146, time =  0.000
+N = 10^4, deltaI = 0.001065982564871, time =  0.000
+N = 10^5, deltaI = 0.000124047637247, time =  0.062
+N = 10^6, deltaI = 0.000049642205289, time =  0.609
+Error: 0.187364

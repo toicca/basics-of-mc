@@ -1,0 +1,24 @@
+Compilation:
+gfortran -c mt_mod.f95
+gfortran -c ex3p2.f95
+gfortran *.o
+
+Running:
+Results: a.exe
+
+Results:
+Dimension:  1    Volume: 2.0000    Error: +/- 0.0000
+Dimension:  2    Volume: 3.1395    Error: +/- 0.0052
+Dimension:  3    Volume: 4.1922    Error: +/- 0.0126
+Dimension:  4    Volume: 4.9942    Error: +/- 0.0234
+Dimension:  5    Volume: 5.2666    Error: +/- 0.0375
+Dimension:  6    Volume: 5.2070    Error: +/- 0.0553
+Dimension:  7    Volume: 4.7565    Error: +/- 0.0766
+Dimension:  8    Volume: 4.1088    Error: +/- 0.1017
+Dimension:  9    Volume: 3.2000    Error: +/- 0.1276
+Dimension: 10    Volume: 2.6010    Error: +/- 0.1630
+Dimension: 11    Volume: 2.0890    Error: +/- 0.2067
+Dimension: 12    Volume: 1.0240    Error: +/- 0.2048
+Dimension: 13    Volume: 0.9011    Error: +/- 0.2717
+Dimension: 14    Volume: 0.3277    Error: +/- 0.2317
+Dimension: 15    Volume: 0.0000    Error: +/- 0.0000
