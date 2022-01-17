@@ -1,0 +1,14 @@
+Compilation:
+#gfortran -c mt19937-64.f95
+#gfortran -c mc_randoms.f95
+#gfortran -c ex03.f95
+gfortran *.o
+
+Answer:
+a) The LCG and Park-Miller are in mc_randoms.f95 and the Mersenne Twister is in mt19937-64.f95 (module is renamed mt_mod). 
+LCG's parameters along with given m are a=10671541 and c=3, where a is chosen so that a-1 is divisible with all the prime factors of m and it's divisible with 4,
+c is chosen as a prime number that's not a factor of m.
+
+b) LCG's repeat interval matches the theoretical value for a LCG with c=/=0 (repeat interval=m) and the Park-Miller also gives the theoretical value (m-1).
+Mersenne twister's repeat interval's value takes very long to calculate, but it should match the theoretical value 2^19937 − 1.
+Repeat interval analysis is based on the given information that LCG's do not return the same value twice within the interval.

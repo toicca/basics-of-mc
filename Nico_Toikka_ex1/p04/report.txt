@@ -1,0 +1,30 @@
+Compilation:
+Points:
+#gfortran -c mt_mod.f95
+#gfortran -c mc_randoms.f95
+#gfortran -c ex04.f95
+gfortran *.o
+
+Buffon:
+#gfortran -c mt_mod.f95
+#gfortran -c mc_randoms.f95
+#gfortran -c ex04_buffon.f95
+gfortran *.o
+
+Executing (for both cases):
+Generating the data:
+a.exe/a.out
+Plotting:
+python plot.py
+
+Answers:
+Points and distribution:
+- The Park-Miller and the Mersenne twister seem to give good distributions with OK values.
+LCG's distribution seem's terrible. Although it gives the theoretical repeat interval, it's values are extremely close to each other.
+
+- LCG's points in given region are problematic with both seeds. 
+The Mersenne twister has a small notch in values with first seed, but it's fixed with another seed and I expect that it goes away with higher number of numbers..
+The Park-Miller doesn't seem to have problems.
+
+Buffon:
+- The error for LCG's needles at 10^4 is around 0.84. This is notably higher than the error in problem 2, which was aroung 0.1 with 10^4 needles.

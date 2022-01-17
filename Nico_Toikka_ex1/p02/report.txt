@@ -1,0 +1,5 @@
+Compilation:
+gfortran ex02.f95
+
+Answer:
+From errors.png it can be seen that the average error is less than 0.0001 around 10^7 needles.
