@@ -1,0 +1,21 @@
+Compile:
+$ gfortran -c mt_mod.f95
+$ gfortran -c ex4p1.f95
+$ gfortran -c ex4p2_dist2.f95
+$ gfortran *.o 
+
+Execute:
+ - Generating data:
+$ ./a.out
+or for Windows
+$ a.exe
+
+ - Generating figures:
+$ python analysis.py
+
+Results:
+ - From plotting the RMS as a function of E_max, proper value for E_max was found out to be around 0.05, but no notable difference was found. Values nearest to 0
+   are assumed to be unreliable.
+ - RMS seems to grow with number of points and evens out at , which is curious, since it would be intuitive to think that accuracy would increase with tries.
+ - There was some funky stuff going on with the code, so these results are definitely questionable.
+ - N_points 10^8 was left out due to time limits.

@@ -1,0 +1,38 @@
+Compile:
+$ gfortran -c mt_mod.f95
+$ gfortran -c ex4p2_dist1.f95
+$ gfortran -c ex4p2_dist2.f95
+ - For 1st distribution
+$ gfortran mt_mod.o ex4p2_dist1.o
+ - For 2nd distribution
+$ gfortran mt_mod.o ex4p2_dist2.o 
+
+Execute:
+ - Generating data:
+$ ./a.out
+or for Windows
+$ a.exe
+
+ - Generating figures:
+$ python analysis.py
+
+Results:
+ - Example synthetic datasets are in distrs1.jpeg and distrs2.jpeg and cumulative functions of the means are in distr1_H.jpeg and distr2_H.jpeg.
+   distr_h.jpeg also includes distribution of the means for fig. 1 and distr2.jpeg includes dataset used for fig. 2
+
+ - Fig. 1:
+ Lower and upper uncertainty respectively:
+  -31.622947862168530        94.622947862168530
+ Error assuming Gaussian shape:
+   104.08807704866204
+
+ - Fig. 2:
+ Lower and upper uncertainty respectively:
+  0.26192271545051415        8.8077338193666144E-002
+ Error assuming Gaussian shape:
+  0.49456678050050024
+
+ - Comments on errors:
+ There is a notable difference in the distribution errors and Gaussian errors with fig. 1 lower being 1/3 of the Gaussian and fig. 2 lower being 1/2 of the Gaussian.
+ It should be noted that upper uncertainty for fig. 2 isn't correct, due to low number of bins (program couldn't find a bin for the value 0.85). A better representation of
+ the errors is included in the cumulative plots.

@@ -1,0 +1,33 @@
+Compile:
+$ gfortran -c mt19937-64.f95
+$ gfortran -c sand_pile.f90
+$ gfortran mt19937-64.o sand_pile.o -o sand_pile
+
+Execute:
+$ ./sand_pile L Ngrains seed
+
+L is the maximum width of the pile
+Ngrains is the number of sand grains to be dropped into the pile; must be at least 100
+seed is the random number seed
+
+Example:
+$ ./sandpile 10 100 1234
+Starting simulation with L=10, Ngrains=100, seed=1234
+
+The program writes files:
+- statistics.dat
+    - Contains columns
+        grain   ntopple      hsum      hmax
+    - grain is the number of grains dropped this far
+    - ntopple is the size of the toppling event after tha latest grain; how many grains toppled
+    - hsum is the total amount of grains left in the system (the grains will overflow at the edges)
+    - hmax is the current height of the pile  
+- sand_pile.dat
+    - Contains 100 frames of sand pile profile
+    - The first L lines are the profile at step L/100,
+      the second L lines are the profile at step 2*L/100,
+      ...
+      the last L lines are the final profile of the pile
+
+The statistics.dat and sand_pile.dat files in this folder are example output from command
+$ ./sandpile 10 100 1234

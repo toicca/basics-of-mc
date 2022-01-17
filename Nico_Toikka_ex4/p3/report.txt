@@ -1,0 +1,7 @@
+Execute:
+$ python analysis.py
+
+Results:
+ -Steady state is achieved at around 500 grains, when toppling has started to happen and the pile starts to overflow at times.
+  Critical behaviour is observed in the plot n_s.jpeg at around interval [10^1, 10^4]. A power law function is roughly fitted around this interval,
+  a better fit might be obtained with more accurate methods and more grains.
