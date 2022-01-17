@@ -1,0 +1,12 @@
+Compilation:
+gfortran mod_qcg.f95
+
+Executing:
+a.exe or a.out
+
+Results:
+m is chosen to be 11, since it's a prime number with itself being the only factor and from the same condition we get that a=11.
+b is solved from the congruence b=k*13+1 with k=0
+c can be in this case any prime number, so 3 should do it.
+
+QCG gives the expected repeat interval of m=11

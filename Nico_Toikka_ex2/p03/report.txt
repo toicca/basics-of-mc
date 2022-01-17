@@ -1,0 +1,27 @@
+Compilation:
+#gfortran -c mt_mod.f95
+#gfortran -c mc_randoms.f95
+#gfortran -c ex2p4.f95
+gfortran *.o
+
+Executing:
+-Generating the data:
+a.exe or a.out
+
+-Analysis and figures:
+python plot.py
+
+Stats:
+LCG mean: 55608.81, median 55392.0
+
+PM mean: 63.18, median 62.5
+
+MT mean: 65.17, median 65.5
+
+QCG mean: 8090902.0, median 8090902.0
+
+Results:
+LCG and QCG clearly fail the test with median and average values notably greater than the critical values.
+
+For M=100 => k=99, so the critical upper values for 0.1 and 0.05 are 117.407, 123.225 respectably and the critical lower values are 81.449 and 77.929, so the Park-Miller and Mersenne Twister
+both pass the test at 0.05 significance level on average. There are some cases where the critical values are exceeded that can be seen from the data files, but these are uncommon.

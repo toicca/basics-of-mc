@@ -1,0 +1,9 @@
+Compilation:
+gfortran ex2p2.f95
+
+Executing:
+a.exe or a.out
+
+Results:
+a0 is the first to be replaced, so we can just implemet the first iteration of TGFSR as code to get a0=43109.
+Comments in code explain the implementation of the algorithm.

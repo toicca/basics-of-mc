@@ -1,0 +1,23 @@
+Compilation:
+#gfortran -c mc_randoms.f95
+#gfortran -c ex2p4.f95
+gfortran *.o
+
+Executing:
+-Generating the data:
+a.exe or a.out
+
+-Plotting:
+python plot.py
+
+Results:
+I generated two figures, one for all k<10^5 and one with limits [1000, 5000] to get a closer look at the fluctuations.
+Both figures seem reasonable, and the limited plots give a good look at how the LCA generators fail the test with sudden peaks as mentioned in the lecture notes.
+
+The tail-end fluctuation in full range plots can be explained with the term <x_(i+k)*x_i> in the function, because all other terms are constant with k. 
+Since the sum of the term contains a N-k number of elements, the term starts to fluctuate more when k approaches N. 
+For example with k=N-2 there are only two elements, so the sum is heavily dependant on seed and the first and last values of the sequence.
+The situation would be similar with all k, if N was small.
+
+Shuffle algorithm with the LCG doesn't improve the results, because although the values are shuffled the generator simply doesn't generate any values in some ranges,
+as was seen in previous exercise. Now the algorithm just shuffles values close to each other, which leads to similar results as with the regular LCG.
